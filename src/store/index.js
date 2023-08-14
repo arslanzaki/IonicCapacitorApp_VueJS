@@ -32,6 +32,12 @@ const store = createStore({
     memories(state) {
       return state.memories;
     },
+
+    memory(state) {
+      return (memoryId) => {
+        return state.memories.find((memory) => memory.id === memoryId);
+      };
+    },
   },
 });
 
