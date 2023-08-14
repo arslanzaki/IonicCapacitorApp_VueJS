@@ -10,7 +10,7 @@
 
 <script>
 import { IonList } from "@ionic/vue";
-import MemoriesListItem from "./MemoriesListItem.vue";
+import MemoriesListItem from "./MemoryListItem.vue";
 export default {
   props: ["memories"],
   components: {

@@ -4,12 +4,22 @@
     page-default-back-link="/memories"
   >
     <h2 v-if="!loadedMemory">Could Not Find A Memory For The Give Id</h2>
-    <h2 v-else>Loaded it</h2>
+    <memory-overview
+      v-else
+      :title="loadedMemory.title"
+      :image="loadedMemory.image"
+      :description="loadedMemory.description"
+    >
+    </memory-overview>
   </base-layout>
 </template>
 
 <script>
+import MemoryOverview from "../components/memories/MemoryOverview.vue";
 export default {
+  components: {
+    MemoryOverview,
+  },
   data() {
     return {
       memoryId: this.$route.params.id,
